@@ -1,0 +1,9 @@
+Script started on Wednesday 08 November 2017 12:01:22 PM IST
+]0;mca1@D-MCA-CLI-021: ~/Documents/AlexDenver/unix/threemca1@D-MCA-CLI-021:~/Documents/AlexDenver/unix/three$ echo "Hello"
+Hello
+]0;mca1@D-MCA-CLI-021: ~/Documents/AlexDenver/unix/threemca1@D-MCA-CLI-021:~/Documents/AlexDenver/unix/three$ c[Kls
+f1.txt  f1.txt~  f2.txt  f2.txt~  f3.txt  typescript
+]0;mca1@D-MCA-CLI-021: ~/Documents/AlexDenver/unix/threemca1@D-MCA-CLI-021:~/Documents/AlexDenver/unix/three$ exit
+exit
+
+Script done on Wednesday 08 November 2017 12:01:37 PM IST
