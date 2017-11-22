@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#board{			
+			background: grey;
+		}
+
+	</style>
+</head>
+<body>
+	<canvas id="board" height="800" width="800"></canvas>
+
+	<script type="text/javascript">
+		var xi=1,yi=0;		//direction
+		var txi=1, tyi=0;	//tail incr
+		var x = 20, y = 20;
+		var dir = 'R';
+		var snake = new Array();
+		snake.push({
+			posx: 20,
+			posy: 20
+		});
+		console.log(snake);
+		window.addEventListener("keydown", function(som){	
+			k = som.keyCode;
+			// console.log(k);
+			if(k==88){
+				clearInterval(board);
+				console.log("Interval Cleared");
+			}else if(k==38 && dir!='B'){
+				xi=0;
+				yi=-1;
+				dir='T';
+
+			}else if(k==40 && dir!='T'){
+				yi=1;
+				xi=0;
+				dir="B";
+
+			}else if(k==37 && dir!='R'){
+				xi=-1;
+				yi=0;
+				dir="L";
+			}else if(k==39 && dir!='L'){
+				xi=1;
+				yi=0;
+				dir="R";
+			}else if(k==107){
+				attach();
+				
+			}
+			// move();
+		});	
+		// setTimeout(function(){
+			// clearInterval(board);
+		// }, 10000);
+		function attach(){
+			switch(dir){
+				case 'R': 
+						tPos=snake.length-1;
+						snake.push({
+							posx: snake[tPos].posx - 20*xi,
+							posy: snake[tPos].posy - 20*yi
+						});
+						break;
+				case 'L': 
+						tPos=snake.length-1;
+						snake.push({
+							posx: snake[tPos].posx + 20*xi,
+							posy: snake[tPos].posy + 20*yi
+						});
+						break;
+
+			}
+		}
+		var posx = x, posy = y;
+		board = setInterval(function(){
+			// function move(){			//Move Head
+				var c = document.getElementById("board");
+				var ctx = c.getContext("2d");
+				ctx.clearRect(0,0,c.width,c.height);
+				ctx.beginPath();
+				for (var i = 1; i<snake.length; i++) {
+					follow(i, ctx);
+				};					
+				snake[0].posx += 20*xi;
+				snake[0].posy += 20*yi;
+				ctx.rect(snake[0].posx%800, snake[0].posy%800,20,20);
+				ctx.stroke();	
+			// }	
+		},250);
+		function jump(i, ctx){
+			tPos=snake.length-1;
+			switch(dir){
+				case 'R': 
+						console.log("R: JUMPS")
+						snake.posx = snake[tPos].posx - 20*xi*i;
+						snake.posy = snake[tPos].posy - 20*yi*i;
+						break;
+				case 'L': 
+						console.log("L: JUMPS")
+						snake.posx = snake[tPos].posx + 20*xi*i;
+						snake.posy = snake[tPos].posy + 20*yi*i; 
+						break;
+
+			}
+			snake[i].posx = snake[i].posx + 20*xi;
+			snake[i].posy = snake[i].posy + 20*yi;
+			ctx.rect(snake[i].posx%800, snake[i].posy%800,20,20);
+			ctx.stroke();
+		}
+		function follow(ithTail, ctx){ 				//Move Body
+			switch('R'){
+				case 'R': 
+					jump(ithTail, ctx);
+					break;
+			}
+
+		}
+	</script>
+</body>
+</html>

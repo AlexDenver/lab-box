@@ -1,0 +1,66 @@
+.login{
+	max-width: 100%;
+	width: 60%;
+	margin: 50px auto;
+}
+.login input{
+	display: block;	
+	padding: 15px 20px;	
+	margin-top: 25px;
+	width: 100%;
+}
+button{
+	padding: 10px 20px;
+	margin: 5px;
+	text-align: center;
+}
+.form input, .form select{
+	padding: 10px 20px;
+	width:100%;
+	background: transparent;
+	color: rgba(0,0,0,0.2);
+	border: 1px solid;
+	border-radius: 4px;
+}
+.form input[type="checkbox"]{
+	padding:0;
+	width: auto;
+}
+.form .fone:first-child{
+	margin-right: 10px
+}
+.form .fone:last-child{
+	margin-right: 0px
+}
+.form textarea{
+	height: 100px;
+	width: 100%;
+}
+.form button{
+	background: #FFB734;
+	color: #fff;
+	border: none;
+	padding: 10px 15px;
+}
+.form{
+	font-family: 'Raleway'
+}
+h1.title {
+    padding-bottom: initial;
+    border-bottom: none;
+    margin: auto;
+   font-weight: 400;
+}
+.form .body{
+	width: 80%;
+	margin:auto;
+}
+.form.footer{
+	background: #FFB734;
+	padding: 15px;
+	width: 100%;
+	color: #fff;
+}
+.form p{
+	font-size: smaller;
+}

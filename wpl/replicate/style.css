@@ -1,0 +1,42 @@
+*{
+	font-family: 'Raleway';
+}
+.card{
+	padding: 25px;
+	background: #ecf0f1;
+	margin: 20px 0;
+	border-top: 10px solid #3498db;	
+}
+.main{
+	margin: 20px 0;
+	background: #f1c40f;
+}
+.sidebar{
+	padding: 25px;
+    margin: 20px 0;
+    background: #2c3e50;
+}
+.post{
+	background: #34495e;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.post:last-child{
+	margin-bottom: 0;
+}
+.mapouter{
+	overflow:hidden;
+	margin-top: 20px;
+}
+.gmap_canvas {
+	background:none!important;
+}
+.bgx {
+    padding: 101px;
+    background: url('./img/bg.jpg')no-repeat fixed; 
+    background-size: cover;
+    margin: 10px 0;    
+}
+.about .sidebar {
+    padding: 50vh 25px;
+ }
