@@ -1,7 +1,0 @@
-#include<stdio.h>
-void main(){
-	int num;
-	printf("Enter a Number: ");
-	scanf("%4d",&num);
-	printf("The given number %d is %s\n",num, (num%2==0?"Even":"Odd"));
-}
