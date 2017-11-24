@@ -4,5 +4,8 @@ void main(){
 }
 
 int x(){
-	return 5;
+	if(4%2){
+		printf("\nHello\n");
+	}
+	return 0;
 }

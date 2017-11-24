@@ -6,7 +6,7 @@ void main(){
 		j=i;
 		while(j-->0)
 			printf("%d\t",i);
-			//Change i to [c++ for sequential, * for static]
+			//Change i to [++c for sequential, * for static]
 		printf("\n");
 	}
 }
