@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tables</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<style type="text/css">
+		.op{
+			margin: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<ul class="nav">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+
+		</ul>
+	</div>
+	<div class="body">
+		<div class="flex op">
+
+			<div class="fone">
+				<input type="text" id="op1">
+			</div>
+			<div class="fone">
+				<input type="text" id="op2">
+			</div>
+			<div class="fone">
+				<input type="text" id="op3">
+			</div>
+			<div class="fone">
+				<input type="text" id="op4">
+			</div>
+		</div>
+		<input id="x">
+	</div>	
+	<script type="text/javascript">	
+		inputs = document.getElementsByTagName("input");
+		for(i=0;i<inputs.length;i++){
+			inputs[i].addEventListener('input', upRes());
+		}
+		function upRes(e) {
+			x;
+		}
+	</script>
+</body>
+</html>
