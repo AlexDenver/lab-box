@@ -8,6 +8,63 @@
 		.op{
 			margin: 25px;
 		}
+		.op div{
+			/*text-align: center;	*/
+			background: #ecf0f1;
+			color: #414558;
+			margin: auto;
+		}
+		.search{
+			padding: 10px;
+			margin: 15px;
+			border: 1px solid #607D8B;
+		}
+		input.search.fone:focus {
+		    color: #607D8B;
+		    box-shadow: none;
+		    border: none;
+		    outline: 0;
+		}
+
+		.search {
+		    padding: 15px;
+		    margin: 15px;
+		    font-size: 1rem;
+		    border: none;
+		    background: #ecf0f1;
+		}
+		.nav {		 
+		    background: #E91E63;
+		}
+		.body{
+			background: #474D69;
+		}
+		.flex.op{
+			height: 90vh;
+		}
+		.op.flex .fone{
+			height: 250px;
+		}
+		.listItem li{
+			list-style: none;
+		}
+		.listItem h1{
+			text-align: center;
+		}
+		.fone.listItem{
+			margin: 5px;
+		}
+		.listItem h1{
+			margin: 10px;
+			margin-top: 20px;
+		}
+		.listItem .title:after{
+			content: '';
+			display: block;
+			width: 80%;
+			margin: auto;
+			border-bottom: 1px solid grey;
+		}
 	</style>
 </head>
 <body>
@@ -19,32 +76,58 @@
 
 		</ul>
 	</div>
-	<div class="body">
-		<div class="flex op">
-
-			<div class="fone">
-				<input type="text" id="op1">
-			</div>
-			<div class="fone">
-				<input type="text" id="op2">
-			</div>
-			<div class="fone">
-				<input type="text" id="op3">
-			</div>
-			<div class="fone">
-				<input type="text" id="op4">
-			</div>
+		<div class="flex">
+			<input type="text" class="search fone" placeholder="Type to Search...">
 		</div>
-		<input id="x">
+	<div class="body">
+		<div class="flex valign op">
+
+			<div class="listItem fone">
+				<div class="title">
+					<h1>Title</h1>
+				</div>
+				<div class="list">
+					<ul>
+						<li>Hello</li>
+					</ul>
+				</div>
+			</div>
+			<div class="listItem fone">
+				<div class="title">
+					<h1>Title</h1>
+				</div>
+				<div class="list">
+					<ul>
+						<li>Hello</li>
+					</ul>
+				</div>
+			</div>
+			<div class="listItem fone">
+				<div class="title">
+					<h1>Title</h1>
+				</div>
+				<div class="list">
+					<ul>
+						<li>Hello</li>
+					</ul>
+				</div>
+			</div>
+			<div class="listItem fone">
+				<div class="title">
+					<h1>Title</h1>
+				</div>
+				<div class="list">
+					<ul>
+						<li>Hello</li>
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
 	</div>	
 	<script type="text/javascript">	
-		inputs = document.getElementsByTagName("input");
-		for(i=0;i<inputs.length;i++){
-			inputs[i].addEventListener('input', upRes());
-		}
-		function upRes(e) {
-			
-		}
+		
 	</script>
 </body>
 </html>
