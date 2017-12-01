@@ -1,13 +1,13 @@
 #include<stdio.h>
 void main(){
-	int i=0,j=0,n=3,k=0;
-	while(i++<n){		//i = 1, 
-		j=i-1;    	//j = 0, 
-		k=0;
-		while(k++<=((n-j)))
-			printf("\t");
-		while(j-->0)
-			printf("*\t");
+	int i,j,n,k,l=1;
+	printf("Enter no of Lines to print:");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++){
+		for(j=0;j<n-i;j++)
+			printf(" ");
+		for(k=1;k<=i;k++)
+			printf("%d ",l++);
 		printf("\n");
 	}
 }
