@@ -1,0 +1,26 @@
+.header{
+	background: #607D8B;
+}
+.inav{
+	margin: 0 ;
+	padding: 0;
+}
+.header .inav li{
+	list-style: none;
+	display: inline;
+}
+.logo{
+	float: left
+}
+.addBt{
+	float: right;
+}
+.logo a, .addBt a{
+	color: #fff;
+	font-size: 2rem;
+	margin: 25px;
+}
+.addBt img{
+	height: 30px;	
+    padding-bottom: 5px;
+}

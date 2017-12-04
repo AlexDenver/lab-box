@@ -2,34 +2,120 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+
 </head>
 <body>
+<div class="header">
+  <ul class="inav">
+    <li class="logo"><a href="#">project</a></li>
+    <li class="addBt"><a href="#"><img src="./img/add.png" data-toggle="modal" data-target="#exampleModal"></a></li>
+    <div class="clearfix"></div>
+  </ul>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navControl`" aria-controls="navControl" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navControl">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home </a>
-      </li>
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+</div>
+<style type="text/css">
+  .red{
+    background: red;
+  }
+  .orange{
+    background:  orange;
+  }
+  .blue{
+    background: blue;
+  }
+  .yellow{
+    background: yellow
+  }
+</style>
+<div class="container-fluid mt-4">
+  <div class="row justify-content-around mb-lg-4">
+    <div class="col-lg-12">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
+    </div>
   </div>
-</nav>
+  <div class="row justify-content-around">
+    <div class="col-sm-4 col-lg-2  card">
+      <div class="title">
+        <h3>Card Title</h3>
+      </div>
+      <div class="body">
+        <ul>
+          <li>List Item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-lg-2  card">
+      <div class="title">
+        <h3>Card Title</h3>
+      </div>
+      <div class="body">
+        <ul>
+          <li>List Item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-lg-2  card">
+      <div class="title">
+        <h3>Card Title</h3>
+      </div>
+      <div class="body">
+        <ul>
+          <li>List Item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-lg-2  card">
+      <div class="title">
+        <h3>Card Title</h3>
+      </div>
+      <div class="body">
+        <ul>
+          <li>List Item</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Title</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title">
+            </div>                       
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">todo Body</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter Body of Todo" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script src="./js/jquery.js" type="text/javascript"></script>
 <script src="./js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="./js/script.js" type="text/javascript"></script>
+
 </body>
 </html>
+
