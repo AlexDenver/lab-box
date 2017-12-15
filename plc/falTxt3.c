@@ -3,14 +3,14 @@
 #include<time.h>
 main(){
 
-	int i,j,k,len,m,n,count=1,o,q,a,len1;
+	int i,j,k,len,m,n,ix,count=1,o,q,a,len1;
 	long int time1;
-	char str[20]="Dilip",stro[30];
+	char str[20]="Hello",stro[30];
 	char ch,chm;
 	clock_t start, end;
 	len=strlen(str);
 	stro[0]='\0';
-	for (i = 0; i < len; i++){
+	for (ix = 0; ix < len; ix++){
 		ch=str[len-1];
 		str[len-1]='\0';
 		len--;
@@ -30,25 +30,11 @@ main(){
 				k++;
 			}
 			printf(" ");
-			
 			printf("%c\n",ch);
-			
+			while(m++<(10-count))
+				printf("\n");
+			printf("%s",stro);
 
-
-
-//			o=0;
-//			while(o<10){
-//				printf("\n");
-//				o++;
-//			}
-//			q=0;
-//			while(str[q]!='\0')
-//			{
-//				printf(" ");
-//				q++;
-//			}
-
-			printf("%s", stro);
 		}
 		len1=strlen(stro);
 		a=0;
@@ -60,7 +46,7 @@ main(){
 		stro[0]=ch;
 
 
-
+	printf("\nLoop: %d\n",ix);
 
 	}
 }

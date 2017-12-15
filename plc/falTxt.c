@@ -2,18 +2,21 @@
 #include<stdlib.h>
 void main(){
 	char str[100];
-	int len,j,row;
+	int len,j,row,m=0,count=0;
 	long int i;
 //	printf("St:");
 //	scanf("%s",str);
 //	for(len=0;str[len]!='\0';len++);
 	for(row=0;row<9;row++){	
-		for(i = 0; i < 137374180; ++i);
-		system("tput clear");
+		for (i = 0; i < 137374180; ++i){}
+			system("tput clear");
 
-		for(i=0;i<row;i++)
-			printf("\n");
-
+		//for(i=0;i<row;i++)
+			//printf("\n");
+		while(m++<count){
+				printf("\n");
+			}
+			count++;
 		printf("*");
 
 
