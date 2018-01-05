@@ -4,7 +4,16 @@
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="../bootstrap/css/style.css">
+		<style >
+			#map{
+				max-height: 95vh;
+				max-width: 80vw;
+				margin: auto;
+			}
+			#map iframe{
+				border: none;
+			}
+		</style>
 </head>
 <body>
 
@@ -26,39 +35,52 @@
 	  <li class="nav-item">
 	    <a class="nav-link" href="local.html">Local Storage</a>
 	  </li>
-	  
+	  <li class="nav-item">
+	    <a class="nav-link" href="carousel.html">Carousel</a>
+	  </li>
+
 	</ul>
 	</div>
 </nav>
+<div class="container m-5">
+	<p>Click the button to get your coordinates.</p>
 
-<p>Click the button to get your coordinates.</p>
+	<button class="btn btn-lg btn-primary"  onclick="getLocation()">Try It</button>
 
-<button class="btn btn-lg btn-primary"  onclick="getLocation()">Try It</button>
+	<p class="mt-5" id="geo"></p>
+</div>
 
-<p id="geo"></p>
+<div id="map">
 
+</div>
 <script>
 	var x = document.getElementById("geo");
+	var g = document.getElementById("map");
 
 	function getLocation() {
 	    if (navigator.geolocation) {
 	        navigator.geolocation.getCurrentPosition(showPosition,errorCallback,{timeout:10000});
-	    } else { 
+	    } else {
 	        x.innerHTML = "Geolocation is not supported by this browser.";
 	    }
 	}
 
 	function showPosition(position) {
-	    x.innerHTML = "Latitude: " + position.coords.latitude + 
+			var lat = position.coords.latitude;
+			var long = position.coords.longitude;
+	    x.innerHTML = "Latitude: " + position.coords.latitude +
 	    "<br>Longitude: " + position.coords.longitude;
+			var iurl = "http://maps.google.com/maps?q="+lat+","+long+"&output=embed";
+			html = `<iframe height="400px" width="100%" src=${iurl} class="map"></iframe>`;
+			g.innerHTML = html;
 	}
-	
+
 	function errorCallback(er){
 		console.log("Error Detected");
 		console.log(er);
 	}
 </script>
 <script src="../bootstrap/js/jquery.js" type="text/javascript"></script>
-<script src="../bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>
