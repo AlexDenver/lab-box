@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/webfont/css/fontawesome-all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand" href="buttons.html">
+		<img src="./img/p.png" width="30" height="30" alt=""> Buttons
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+	<ul class="navbar-nav ml-auto ">
+	  <li class="nav-item">
+	    <a class="nav-link" href="index.html">Geolocation </a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="webworker.html">Web-Workers</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="local.html">Local Storage</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="carousel.html">Carousel </a>
+		</li>
+	  <li class="nav-item active">
+	    <a class="nav-link" href="buttons.html">Buttons <span class="sr-only">(current)</span></a>
+		</li>
+
+	</div>
+</nav>
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-4">
+			<h4 class="text-center badge-pill p-2 m-3 mb-5 badge-light">Loading Button</h4>
+			<a href="buttons.html">
+				<button class="load btn btn-lg btn-primary">
+					<i class="fa fa-spinner fa-spin"></i> Loading
+				</button>
+			</a>
+		</div>
+		<style media="screen">
+			.btn{
+				margin: 5px;
+			}
+		</style>
+		<div class="col-md-4">
+			<h4 class="text-center badge-pill p-2 m-3 mb-5 badge-light">Alert Button</h4>
+			<div class="row">
+				<div class="col-6">
+					<button class="btn btn-lg btn-primary btn-block">
+						Alert
+					</button>
+					<button class="btn btn-lg btn-danger btn-block">
+						Danger
+					</button>
+				</div>
+				<div class="col-6">
+					<button class="btn btn-lg btn-warning btn-block">
+						Warning
+					</button>
+					<button class="btn btn-lg btn-info btn-block">
+						Info
+					</button>
+				</div>
+			</div>
+
+
+				<button class="btn btn-lg btn-success btn-block">
+					Success
+				</button>
+		</div>
+		<style media="screen">
+		.btnh:hover {
+			border: 3px dotted #3a7999;
+			color: #3a7999;
+			background: rgba(0,0,0,0);
+			transform:  translate3d(25px,0,5px);
+		}
+		.btnr:hover {
+			transform: translate3d(-25px,0,5px);
+		}
+		.btnh{
+			border: 3px solid transparent;
+			transition: 0.5s ease;
+		}
+		</style>
+		<div class="col-md-4">
+			<h4 class="text-center badge-pill p-2 m-3 mb-5 badge-light">Animated Button</h4>
+				<button class="btnh btn btn-lg btn-primary btn-block">
+					Translate Right
+				</button>
+				<button class="btnr btnh btn btn-lg btn-primary btn-block">
+					Translate Left
+				</button>
+		</div>
+	</div>
+	<style>
+
+
+	table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+
+	td {
+	padding: 0;
+	}
+
+	.ccontainer {
+	/* height: 600px;
+	left: 50%;
+	margin: -300px 0 0 -300px;
+	position: absolute;
+	width: 600px;
+	top: 50%; */
+	}
+
+	.calendar-container {
+	position: relative;
+	width: 450px;
+	margin:5rem auto;
+	}
+
+	.calendar-container header {
+	border-radius: 1em 1em 0 0;
+	background: #e66b6b;
+	color: #fff;
+	padding: 3em 2em;
+	}
+
+	.day {
+	font-size: 8em;
+	font-weight: 900;
+	line-height: 1em;
+	}
+
+	.month {
+	font-size: 4em;
+	line-height: 1em;
+	text-transform: lowercase;
+	}
+
+	.calendar {
+	background: #fff;
+
+	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+	color: #555;
+	display: inline-block;
+	width: 100%;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+	}
+
+	.calendar thead {
+	color: #e66b6b;
+	font-weight: 700;
+	text-transform: uppercase;
+	}
+
+	.calendar td {
+	padding: .5em 1em;
+	text-align: center;
+	}
+
+	.calendar tbody td:hover {
+	background: #cacaca;
+	color: #fff;
+	}
+
+	.current-day {
+	color: #e66b6b;
+	}
+
+	.prev-month,
+	.next-month {
+	color: #cacaca;
+	}
+
+	.ring-left,
+	.ring-right {
+	position: absolute;
+	top: 260px;
+	}
+
+	.ring-left { left: 2em; }
+	.ring-right { right: 2em; }
+
+	.ring-left:before,
+	.ring-left:after,
+	.ring-right:before,
+	.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 8px;
+	height: 32px;
+	width: 8px;
+	}
+	</style>
+	<div class="row">
+		<div class="col-12">
+			<div class="ccontainer">
+
+		<div class="calendar-container">
+
+			<header>
+
+				<div class="day" id="day">06</div>
+				<div class="month" id="month">Jan</div>
+
+			</header>
+
+			<table class="calendar">
+
+				<thead>
+
+					<tr>
+
+						<td>Sun</td>
+						<td>Mon</td>
+						<td>Tue</td>
+						<td>Wed</td>
+						<td>Thu</td>
+						<td>Fri</td>
+						<td>Sat</td>
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<tr>
+						<td class="prev-month">31</td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
+					</tr>
+
+					<tr>
+						<td>14</td>
+						<td>15</td>
+						<td>16</td>
+						<td>17</td>
+						<td>18</td>
+						<td>19</td>
+						<td>20</td>
+					</tr>
+
+					<tr>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
+						<td>24</td>
+						<td>25</td>
+						<td>26</td>
+						<td>27</td>
+					</tr>
+
+					<tr>
+						<td>28</td>
+						<td>29</td>
+						<td>30</td>
+						<td>31</td>
+						<td class="next-month">1</td>
+						<td class="next-month">2</td>
+						<td class="next-month">3</td>
+					</tr>
+
+				</tbody>
+
+			</table>
+
+			<div class="ring-left"></div>
+			<div class="ring-right"></div>
+
+		</div> <!-- end calendar-container -->
+
+	</div> <!-- end container -->
+		</div>
+	</div>
+
+</div>
+
+
+<script src="../bootstrap/js/jquery.js" type="text/javascript"></script>
+<script src="./js/popper.js" type="text/javascript"></script>
+<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	setTimeout(function () {
+		d = new Date();
+		$('.fa-spin').removeClass('fa-spin fa-spinner');
+		$('.load').html('Reload');
+		$('#day').html(d.getDate());
+		$('#month').html(d.toDateString().split(" ")[1])
+		$($('td')[7+d.getDate()]).addClass('current-day');
+	}, 1500);
+
+</script>
+</body>
+</html>
