@@ -39,17 +39,33 @@
 		<button type="button" class="btn btn-primary">
 		  Notifications <span class="badge badge-light" id="result">4</span>
 		</button>
-		<button type="button" class="btn btn-primary stop">
-		  Stop
+		<button type="button" class="btn btn-primary ctrl">
+		  Start
 		</button>
 
 </div>
 
 
+
 <script src="../bootstrap/js/jquery.js" type="text/javascript"></script>
 <script>
 var w;
+flag = true;
 $(document).ready(function () {
+	$('.ctrl').on('click',function (ev) {
+		if(flag){
+			startWorker();
+			$('.ctrl').html('Stop');
+			$('.ctrl').addClass('btn-danger');
+			flag=!flag;
+		}else {
+			stopWorker();
+			$('.ctrl').html('Stopped');
+			$('.ctrl').removeClass('btn-danger');
+			$('.ctrl').attr('disabled',true);
+		}
+
+	});
 	function startWorker() {
 		if(typeof(Worker) !== "undefined") {
 			if(typeof(w) == "undefined") {
@@ -62,9 +78,8 @@ $(document).ready(function () {
 			document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
 		}
 	}
-	startWorker();
-	function stopWorker() {
 
+	function stopWorker() {
 		console.log("Stopped the Worker");
 		w.terminate();
 		// /w = undefined;
@@ -74,7 +89,9 @@ $(document).ready(function () {
 	})
 
 })
+
 </script>
+<script src="./js/popper.js" type="text/javascript"></script>
 <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>
