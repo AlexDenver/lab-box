@@ -9,4 +9,8 @@ do
 done
 echo $x
 
-
+for b in {1..$n}
+do
+echo $b
+exit
+done
