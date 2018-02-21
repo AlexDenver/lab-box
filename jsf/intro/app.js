@@ -1,9 +1,9 @@
-angular.module('app',['ngSanitize'])
+angular.module('app',['ngSanitize', 'ui.router'])
 	.controller('intro', function ($scope) {
 		$scope.name = "John";
 		$scope.click = function(){
 			$('#modal1').modal('open');
-		}
+		}		
 		$scope.posts = [{
 		    "userId": 1,
 		    "id": 1,
@@ -28,5 +28,21 @@ angular.module('app',['ngSanitize'])
 		    "title": "eum et est occaecati",
 		    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
 	  	}]
-	});
+	})
+	.config(function($stateProvider){
+		var home = {
+			name: 'home',
+			url: '/',
+			templateUrl: './templates/home.html'
+		};
+		var about = {
+			name: 'about',
+			url: '/about',
+			templateUrl: './templates/about.html'
+		};
+		  $stateProvider.state(home);
+		  $stateProvider.state(about);
+		  // console.log($stateProvider);
+		  // $stateProvider.onInvalid('/');
+	})
 
