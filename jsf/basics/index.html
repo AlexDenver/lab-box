@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Intro</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../fw/materialize/css/materialize.min.css"> 
+	<script src="../fw/jquery.js"></script>
+	<script src="../fw/materialize/js/materialize.min.js"></script> -->
+	<script src="../fw/angular.min.js"></script>
+</head>
+<body ng-app="blog" style="background:{{color}};font-family:'{{family}}'">
+			<div >
+				<input type="number" ng-model='name'>
+				<input type="number" ng-model='name2'>				
+				value="{{name * name2}}"</br>
+				{{1+1}}
+			</div>
+
+		<select ng-init="color='red'" ng-model='color'>
+			<option value="red">red</option>
+			<option value="orange">orange</option>
+			<option value="#ecf0f1">Grey Cloud</option>
+		</select>
+		<select ng-model="family">
+			<option value="Serif">Serif</option>
+			<option value="Sans">Sans</option>
+			<option value="Mono">Mono</option>
+		</select>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	</p>
+
+</body>
+</html>
