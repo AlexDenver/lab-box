@@ -6,16 +6,17 @@
 	<script src="../fw/jquery.js"></script>
 	<script src="../fw/materialize/js/materialize.min.js"></script> -->
 	<script src="../fw/angular.min.js"></script>
+	<script src="./app.js" type="text/javascript"></script>
 </head>
-<body ng-app="blog" style="background:{{color}};font-family:'{{family}}'">
+<body ng-app="blog" ng-controller="anddog" style="background:{{color}};font-family:'{{family}}'">
 			<div >
-				<input type="number" ng-model='name'>
-				<input type="number" ng-model='name2'>				
-				value="{{name * name2}}"</br>
+				<input type="number" ng-model='no'>
+				<input type="number" ng-model='no2'>				
+				value="{{no * no2}}"</br>
 				{{1+1}}
 			</div>
 
-		<select ng-init="color='red'" ng-model='color'>
+		<select ng-init="color='white'" ng-model='color'>
 			<option value="red">red</option>
 			<option value="orange">orange</option>
 			<option value="#ecf0f1">Grey Cloud</option>
@@ -24,13 +25,18 @@
 			<option value="Serif">Serif</option>
 			<option value="Sans">Sans</option>
 			<option value="Mono">Mono</option>
-		</select>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	</p>
+		</select>		
+			<div ng-repeat="std in students">
+				<h4>Name: {{std.fname + " " + std.lname}}</h4>
+				<table class="">
+				<tr ng-repeat="m in std.marks" class="red" > <th>{{m.subject}}</th> <td>{{m.marks}}</td></tr>					
+				</table>
+			</div>
+		</ul>
+
 
 </body>
+<script type="text/javascript">
+	
+</script>
 </html>

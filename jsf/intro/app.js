@@ -29,6 +29,19 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
 	  	}]
 	})
+	.controller('student',function($scope) {
+		$scope.students = [{
+			usn: "MCA12",
+			fname: "Denver",
+			lname: "Dsouza",
+			marks: [{marks: 31,subject:'JSF'},{marks: 21,subject:'MIS'},{marks: 25,subject:'C++'}]
+		},{
+			usn: "MCA13",
+			fname: "Dilip",
+			lname: "Kumar",
+			marks: [{marks: 31,subject:'JSF'},{marks: 41,subject:'MIS'},{marks: 35,subject:'C++'}],
+		}];	
+	})
 	.config(function($stateProvider){
 		var home = {
 			name: 'home',
@@ -42,7 +55,16 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		};
 		  $stateProvider.state(home);
 		  $stateProvider.state(about);
+		  $stateProvider.state({
+		  	name:'calc',
+		  	url:'/calculate',
+		  	templateUrl: './templates/calc.html'
+		  });
+		  $stateProvider.state({
+		  	name:'stud',
+		  	url:'/student',
+		  	templateUrl: './templates/stud.html'
+		  });
 		  // console.log($stateProvider);
 		  // $stateProvider.onInvalid('/');
 	})
-
