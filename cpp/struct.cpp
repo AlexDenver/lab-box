@@ -6,6 +6,7 @@ typedef struct {
 }date;
 int main(){
 	date d1;
+	d2.d=1;
 	cout<<"Enter Date:";	
 	cin>>d1.d;
 	cout<<"Enter Month:";

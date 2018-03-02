@@ -1,0 +1,15 @@
+cd Documents/AlexDenver
+git status
+printf "Do you wish to Pull from Server (y/n):"
+read usr
+if [ $usr = 'y' ]:
+then
+git pull origin master
+fi
+echo "Options for Lab."
+ls -d */
+printf "What lab are we Working on Today?:"
+read usr
+cd $usr
+PATH="$PATH:./"
+exec bash
