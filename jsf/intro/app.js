@@ -28,6 +28,26 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		    "title": "eum et est occaecati",
 		    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
 	  	}]
+
+	  	$scope.student = {
+	  		fname: "Denver",
+	  		lname: "Dsouza",
+	  		reg: "MCA12", 
+	  		report: [{
+	  			subj: "Science", 
+	  			marks: 60
+	  		},{
+	  			subj:"Maths", 
+	  			marks: 63
+	  		},{
+  				subj: "English",
+  				marks: 75
+	  		}]
+	  	};
+	  	$scope.expenses = {books: [60,80,40],qty: [2,3,1]};
+
+	  	$scope.students = ["John","Aaron","Karen","Josh","Liam","Henry","Sean","Mike","Brady","Eric"];
+	  	
 	})
 	.controller('student',function($scope) {
 		$scope.students = [{
@@ -64,6 +84,11 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		  	name:'stud',
 		  	url:'/student',
 		  	templateUrl: './templates/stud.html'
+		  });
+		  $stateProvider.state({
+		  	name:'filters',
+		  	url:'/filters',
+		  	templateUrl: './templates/filters.html'
 		  });
 		  // console.log($stateProvider);
 		  // $stateProvider.onInvalid('/');
