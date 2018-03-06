@@ -1,0 +1,25 @@
+if [ $# -eq 0 ]:
+then
+	echo "USAGE: $0 <file>"
+	exit
+fi
+gcc $1.c -o $1 -pass-exit-codes
+if [ $? -eq 0 ]:
+then
+	echo "Compiled Successfully"
+	printf "\nRun this Program?(y/n):"
+	read us
+	us=`echo $us | tr [Y] [y]`
+	if [ $us = 'y' ]:
+	then
+		$1
+	fi
+fi
+printf "\nDo you want to Clear and Continue?(y/n):"
+read us
+us=`echo $us | tr [Y] [y]`
+if [ $us = 'y' ]:
+then
+	clear
+fi
+exec bash
