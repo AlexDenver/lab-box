@@ -29,21 +29,25 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
 	  	}]
 
-	  	$scope.student = {
-	  		fname: "Denver",
-	  		lname: "Dsouza",
-	  		reg: "MCA12", 
-	  		report: [{
-	  			subj: "Science", 
-	  			marks: 60
-	  		},{
-	  			subj:"Maths", 
-	  			marks: 63
-	  		},{
-  				subj: "English",
-  				marks: 75
-	  		}]
-	  	};
+	  	$scope.student = [{
+	  		  		fname: "Denver",
+	  		  		lname: "Dsouza",
+	  		  		reg: "MCA12", 
+	  		  		report: [{
+	  		  			subj: "Science", 
+	  		  			marks: 60
+	  		  		},{
+	  		  			subj:"Maths", 
+	  		  			marks: 63
+	  		  		},{
+	  	  				subj: "English",
+	  	  				marks: 75
+	  		  		}]
+	  		  	},{
+	  		  		fname: "Name 1",
+	  		  		lname: "Lname 1",
+	  		  		reg: "MCA13"
+	  		  	}];
 	  	$scope.expenses = {books: [60,80,40],qty: [2,3,1]};
 
 	  	$scope.students = ["John","Aaron","Karen","Josh","Liam","Henry","Sean","Mike","Brady","Eric"];
