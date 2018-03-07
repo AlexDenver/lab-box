@@ -1,7 +1,10 @@
 <div ng-controller="formCtrl"> 
 	<div class="container">
-		<form name="form">
-			
+		<form name="form" ng-model="formx">
+			<input type="text" name="namex" ng-model="namex"/>
+			<span ng-show="form.namex.$dirty">You Entered Data Here</span>
+			<span ng-show="form.namex.$untouched">This data is untouched</span>
+			<!-- <pre>{{form|json}}</pre> -->
 		</form>
 	</div>
 </div>

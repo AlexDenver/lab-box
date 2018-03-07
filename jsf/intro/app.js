@@ -94,6 +94,14 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		  	url:'/filters',
 		  	templateUrl: './templates/filters.html'
 		  });
+		  $stateProvider.state({
+		  	name:'forms',
+		  	url:'/forms',
+		  	templateUrl: './templates/forms.html'
+		  });
 		  // console.log($stateProvider);
 		  // $stateProvider.onInvalid('/');
+	})
+	.controller('formCtrl',function($scope){
+
 	})
