@@ -1,0 +1,17 @@
+#!/bin/sh
+if [ $# -eq 0 ]:
+then
+	echo "USAGE: $0 <newFileName>"
+	exit
+fi
+cp skeleton "$1.cpp"
+	if [ $? -eq 0 ]:
+	then
+		sed -i -e "s/className/$1/g" "$1.cpp"
+		echo "File Created"
+	else
+		echo "Error."
+	fi
+
+	exit
+fi

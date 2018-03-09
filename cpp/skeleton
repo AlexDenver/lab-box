@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+class className{
+	private:
+
+	public:
+		className(){
+			
+		};
+		
+};
+
+int main(){
+	className 
+	
+	return 0;
+}

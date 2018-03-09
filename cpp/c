@@ -1,3 +1,4 @@
+#!/bin/sh
 if [ $# -eq 0 ]:
 then
 	echo "USAGE: $0 <file>"
@@ -14,12 +15,21 @@ then
 	then
 		$1
 	fi
+	
 fi
-printf "\nDo you want to Clear and Continue?(y/n):"
+printf "\nDo you want to Clear and Continue?(y/n)[r for retry]:"
 read us
 us=`echo $us | tr [Y] [y]`
 if [ $us = 'y' ]:
 then
 	clear
 fi
-exec bash
+if [ $us = 'r' ]:
+then
+	c $1
+fi
+if [ $us = 'cr' ]:
+then
+	tput clear
+	c $1
+fi
