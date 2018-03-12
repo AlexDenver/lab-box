@@ -1,10 +1,98 @@
 <div ng-controller="formCtrl"> 
-	<div class="container">
+	<div class="container myWrap">
+		<p>
+		  <input type="checkbox" id="header" ng-model="header" />
+		  <label for="header">Check to Show Header</label>
+		  <h4 ng-show="header">Course Registration</h4>
+		</p>
+		<p>
+			<div class="row">				
+				<div class="input-field col s6">
+				    <select ng-model="info">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="1">M.C.A</option>
+				      <option value="2">M.Sc IT</option>
+				      <option value="3">M.Sc SE</option>
+				    </select>
+				    <label>Select Course</label>
+			    </div>
+			    <div class="col s6">
+			    	<div ng-switch="info">
+			    		<div ng-switch-when="1">
+			    			<h5>Masters of Computer Application (M.C.A)</h5>
+			    			<p>
+			    				Master of Computer Applications (MCA) is a three-year (six semesters) professional Master's Degree in computer science awarded in India. The course was designed to meet the growing demand for qualified professionals in the field of Information Technology.			    				
+			    			</p>
+			    		</div>
+			    		<div ng-switch-when="2">
+			    			<h5>Master of Science in Information Technology(M.Sc IT)</h5>
+			    			<p>
+			    				A Master of Science in Information Technology is a type of postgraduate academic master's degree usually offered in a University's College of Business and in the recent years in integrated Information Science & Technology colleges
+			    			</p>
+			    		</div>
+			    		<div ng-switch-when="3">
+			    			<h5>Masters of Science in Software Engineering(M.Sc SE)</h5>
+			    			<p>
+			    				The MSc in Software Engineering teaches the principles of modern software engineering, together with the tools, methods and techniques that support their application. It offers working professionals the opportunity to learn more about the technological advances that are changing and emerging.
+			    			</p>
+			    		</div>
+			    		
+			    	</div>
+			    </div>
+			</div>
+		</p>
+		<p>
+			<div class="red-text" ng-if="form.$pristine">
+			Waiting for your Input.
+
+			  <div class="progress red">
+			      <div class="indeterminate blue"></div>
+			  </div>
+        
+			</div>
+			<span class="green-text" ng-if="form.$dirty">You have Entered Data.</span>
+		</p>
 		<form name="form" ng-model="formx">
-			<input type="text" name="namex" ng-model="namex"/>
-			<span ng-show="form.namex.$dirty">You Entered Data Here</span>
-			<span ng-show="form.namex.$untouched">This data is untouched</span>
-			<!-- <pre>{{form|json}}</pre> -->
+			<div class="row">
+		        <div class="input-field col s6">
+		          <input placeholder="Enter First Name" required ng-model="fname" name="fname"  id="first_name" type="text">
+		          <label for="first_name">First Name</label>
+		          <small ng-show="form.fname.$dirty">You Entered Data Here</small></br>
+				  <small ng-show="form.fname.$invalid && form.fname.$touched">Name is <span class="red-text">Required</span></small>	
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="lname" type="text" name="lname" required minlength="3" ng-model="lname">
+		          <label for="lname">Last Name</label>
+				  <small ng-show="form.lname.$invalid && form.lname.$touched">Name is <span class="red-text">Required</span></small></br>
+				  <small ng-show="form.lname.$error.minlength && form.lname.$touched">Last Name Needs to have <b class="red-text">Atleast 3 Letters</b></small>	
+		        </div>
+	     	</div>
+		    <div class="row">
+		        <div class="input-field col s12">
+		          <input required id="email" type="email" name="email" ng-model="email" class="validate">
+		          <label for="email">Email</label>
+		          <small ng-show="form.email.$invalid && form.email.$touched"><b class="red-text">Invalid</b> Email</small></br>
+		        </div>
+		    </div>
+		<p>
+		  <input type="checkbox" id="debug" ng-model="debug" />
+		  <label for="debug">Show Debug Data</label>
+		</p>
+		<pre ng-show="debug" class="scale-transition grey p5">{{form|json}}</pre>
+
+		<button class="blue waves-effect waves-light btn" ng-disabled="form.$invalid">Submit</button>
+		<button class="red waves-effect waves-light btn" ng-click="reset()">Reset</button>
 		</form>
+
 	</div>
 </div>
+
+
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+  	$('select').material_select();
+  });
+
+</script>

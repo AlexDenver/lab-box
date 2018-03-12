@@ -1,0 +1,9 @@
+.myWrap{
+	margin:50px auto;
+}
+.ho:after{
+	content: '' !important;
+}
+.ho:before{
+	content: 'HO '
+}

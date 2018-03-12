@@ -69,7 +69,7 @@ angular.module('app',['ngSanitize', 'ui.router'])
 	.config(function($stateProvider){
 		var home = {
 			name: 'home',
-			url: '/',
+			url: '',
 			templateUrl: './templates/home.html'
 		};
 		var about = {
@@ -103,5 +103,11 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		  // $stateProvider.onInvalid('/');
 	})
 	.controller('formCtrl',function($scope){
-
+		$scope.reset = function() {
+			$scope.fname = "Denver";
+			$scope.lname = "Dsouza";
+			$scope.email = "hello@alexdenver.com";
+			Materialize.updateTextFields();
+		};
+		$scope.reset();
 	})
