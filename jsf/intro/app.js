@@ -28,7 +28,6 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		    "title": "eum et est occaecati",
 		    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
 	  	}]
-
 	  	$scope.student = [{
 	  		  		fname: "Denver",
 	  		  		lname: "Dsouza",
