@@ -1,3 +1,4 @@
+studentsList = ["John","Aaron","Karen","Josh","Liam","Henry","Sean","Mike","Brady","Eric"];
 angular.module('app',['ngSanitize', 'ui.router'])
 	.controller('intro', function ($scope) {
 		$scope.name = "John";
@@ -49,7 +50,7 @@ angular.module('app',['ngSanitize', 'ui.router'])
 	  		  	}];
 	  	$scope.expenses = {books: [60,80,40],qty: [2,3,1]};
 
-	  	$scope.students = ["John","Aaron","Karen","Josh","Liam","Henry","Sean","Mike","Brady","Eric"];
+	  	$scope.students = studentsList;
 	  	
 	})
 	.controller('student',function($scope) {
@@ -65,6 +66,19 @@ angular.module('app',['ngSanitize', 'ui.router'])
 			marks: [{marks: 31,subject:'JSF'},{marks: 41,subject:'MIS'},{marks: 35,subject:'C++'}],
 		}];	
 	})
+	.controller('controllerOne',function($scope,$interval){
+		$scope.name=studentsList[Math.floor(Math.random()*10)];
+		$interval(function() {
+			$scope.name=studentsList[Math.floor(Math.random()*10)];
+		},1000)
+	})
+	.controller('controllerTwo',function($scope,$interval){		
+		$scope.name=studentsList[Math.floor(Math.random()*10)];
+		$interval(function() {
+			$scope.name=studentsList[Math.floor(Math.random()*10)];
+		},250)
+	})
+
 	.config(function($stateProvider){
 		var home = {
 			name: 'home',
@@ -98,6 +112,11 @@ angular.module('app',['ngSanitize', 'ui.router'])
 		  	url:'/forms',
 		  	templateUrl: './templates/forms.html'
 		  });
+		  $stateProvider.state({
+		  	name:'multi',
+		  	url:'/multi',
+		  	templateUrl: './templates/multi.html'
+		  });
 		  // console.log($stateProvider);
 		  // $stateProvider.onInvalid('/');
 	})
@@ -109,4 +128,10 @@ angular.module('app',['ngSanitize', 'ui.router'])
 			Materialize.updateTextFields();
 		};
 		$scope.reset();
-	})
+	});
+
+// angular.module('theSecondApp',[])
+// 	.controller('theController',function($scope) {
+
+// 	});
+// angular.bootstrap(document.getElementById("theSecondAppId"), ['theSecondApp']);

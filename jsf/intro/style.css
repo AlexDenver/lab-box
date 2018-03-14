@@ -7,3 +7,21 @@
 .ho:before{
 	content: 'HO '
 }
+.ctr:after{
+	content: '' !important;
+}
+.ctr{
+	font-weight:bold!important;
+}
+.ctr:before{
+	content: 'Controller: ';
+}
+#first_name.ng-pristine{
+	
+	border-bottom:2px solid #2196F3!important;
+}
+
+.multiModule{
+	border:1px solid;
+	margin: 10px auto;
+}

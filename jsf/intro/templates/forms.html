@@ -63,7 +63,7 @@
 		        <div class="input-field col s6">
 		          <input id="lname" type="text" name="lname" required minlength="3" ng-model="lname">
 		          <label for="lname">Last Name</label>
-				  <small ng-show="form.lname.$invalid && form.lname.$touched">Name is <span class="red-text">Required</span></small></br>
+				  <small ng-show="form.lname.$error.required && form.lname.$touched">Name is <span class="red-text">Required</span></small></br>
 				  <small ng-show="form.lname.$error.minlength && form.lname.$touched">Last Name Needs to have <b class="red-text">Atleast 3 Letters</b></small>	
 		        </div>
 	     	</div>
