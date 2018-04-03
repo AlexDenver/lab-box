@@ -1,8 +1,10 @@
 angular.module('grapher',[])
 	.controller('handles',function($scope){
-		angular.element(document).ready(function(){
+		$(document).ready(function(){
 			var canvas = $("#draw")[0];
+			
 			var ctx = canvas.getContext("2d");
+			console.log(ctx)
 			var img = new Image;
 			// img.src = "data:image/png;base64," + myPNGEncoder(r,g,b,a);
 
@@ -13,10 +15,12 @@ angular.module('grapher',[])
 			d[2]   = 0; //b
 			d[3]   = 0.5; //a
 			x=y=1;
-			for(i=0;i<100;i++){
-				ctx.putImageData( id, x+i, y );
-				console.log(`x: ${x+i} ${y}`);
-				setPixel(id,x+i,y,0,0,0,0.5);
+			for(i=0;i<100;i++){				
+				ctx.fillStyle = "red";
+				ctx.fillRect(x+i, y, 1, 1);
+				// setPixel(id,x+i,y,255,0,0,0.5);
+				// console.log(`x: ${x+i} ${y}`);
+				// ctx.putImageData( id, x+i, y );
 			}
 			
 			
@@ -30,4 +34,5 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index+1] = g;
     imageData.data[index+2] = b;
     imageData.data[index+3] = a;
+    console.log(imageData);
 }
