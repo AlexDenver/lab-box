@@ -1,0 +1,42 @@
+#include<stdio.h>
+#define MAX 10
+int queue[MAX],front=-1,rear=-1;
+
+void enter(int x){
+	if((rear-front)>MAX){
+		printf("Queue Full!");
+	}else{
+		queue[++rear]=x;
+	}
+}
+int exit(){
+	if((front>=rear)
+		printf("Queue Empty!");
+	else
+		return queue[++front];
+}
+void display(){
+	int i;
+	for(i=front;i<rear;i++)
+		printf("%d\t",queue[i]);
+}
+void main(){
+	int op,t;
+	printf("\n\n1) Enter Queue\t2) Exit Queue\n3) Display Queue\t4) Exit\n");
+	printf("Enter your Choice: ");
+	scanf("%d",&op);
+
+	switch(op){
+		case 1: printf("\nEnter Element to be Added to Queue:");
+			scanf("%d",&t);
+			enter(t);
+			break;
+		case 2: printf("\n%d was Processed From the Queue",exit());
+			break;
+		case 3: printf("\nElements in Queue Are.")
+			display();
+			break;
+		case 4: printf("Exiting...")
+			break;
+	}
+}

@@ -23,3 +23,12 @@ if [ $us = 'y' ]:
 then
 	clear
 fi
+if [ $us = 'r' ]:
+then
+	ds $1
+fi
+if [ $us = 'cr' ]:
+then
+	tput clear
+	ds $1
+fi
