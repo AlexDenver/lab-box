@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Angular Intro</title>
-	<link rel="stylesheet" type="text/css" href="../fw/materialize/css/materialize.min.css">
+	<title>TaskMan</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script src="../fw/jquery.js"></script>
 	<script src="../fw/materialize/js/materialize.min.js"></script>
 	<script src="../fw/angular.min.js"></script>	
 	<script src="../fw/angular.ui-router.min.js"></script>
+	<script src="../fw/angular-storage.min.js"></script>
 	<script src="./js/app.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="../fw/materialize/css/materialize.min.css">
 	
 </head>
 <body ng-app="taskman" >
@@ -16,7 +17,7 @@
 			<div class="head">
 			 <nav>
 			    <div class="nav-wrapper blue darken-1">
-			      <a href="#!" class="brand-logo"><img src="./src/logo.png" height="30px"> <small>Taskman</small></a>
+			      <a href="#!" class="brand-logo"><img src="./src/logo.png" height="30px"> <small>TaskMan</small></a>
 			      <ul class="right hide-on-med-and-down">
 			        <li><a href="#"></a></li>
 			        
@@ -26,30 +27,50 @@
 			</div>
 			<div class="body">
 			 	<div class="create z-depth-2" ng-controller="newTask">
+				    <form class="col s6 offset-s3">
 				 <div class="row center-align">
-				 <form name="typesel">
-				 	
-					 <div class="col s6">
-						<label for="text">
-				        	<input name="taskType" class="with-gap" type="radio" id="text" />
-				        	<span>Text</span>
-				      	</label>	 	
+				 
+					 <div class="col s6">	
+				      	 <input name="taskType" type="radio" value="text" ng-model="typex" id="text" />
+      					 <label for="text">Text</label> 	
 					 </div>	
 					 <div class="col s6">
-						<label for="list">
-				        	<input name="taskType" class="with-gap" type="radio"  id="list"/>
-				        	<span>List</span>
-				      	</label>	 	
+						<input name="taskType" type="radio" value="list" ng-model="typex" id="list" />
+      					 <label for="list">List</label>	 	
 					 </div>	 				 	
-				 </form>
+				 
 				 </div>			      
 				  <div class="row ">
-				    <form class="col s6 offset-s3">
+				      <div class="row center-align">
+
+						 <form name="typesel">
+							 <div class="col s3">
+								<input name="color" value="red" ng-model="color" type="radio" id="red" />
+      					 		<label for="red">Red</label>	 	
+							 </div>	 
+							 <div class="col s3">
+								<input name="color" value="yellow" ng-model="color" type="radio" id="yellow" />
+      					 		<label for="yellow">Yellow</label>	 	
+							 </div>	 
+							 <div class="col s3">
+								<input name="color" value="blue" ng-model="color" type="radio" id="blue" />
+      					 		<label for="blue">Blue</label>	 	
+							 </div>	 
+							 <div class="col s3">
+								<input name="color" value="green" ng-model="color" type="radio" id="green" />
+      					 		<label for="green">Green</label>	 	
+							 </div>	 				 	
+						 </form>
+
+					  </div>		
 				      <div class="row">
 				        <div class="input-field col s12">
-				          <textarea id="newTask" class="materialize-textarea"></textarea>
+				          <textarea id="newTask" ng-model="body" class="materialize-textarea"></textarea>
 				          <label for="newTask">Enter Text Here...</label>
 				        </div>
+				      </div>
+				      <div class="row">
+				      	<a class="waves-effect waves-light blue darken-1 btn" ng-click="create(body,color,typex)">Create</a>
 				      </div>
 				    </form>
 				  </div>
@@ -58,24 +79,60 @@
 				<div class="tasks" ng-controller="taskView">
 				  <h2 class="center-align blue-text text-darken-2 ">Tasks</h2>
 				  <div class="row">
-				    <div class="col s12 m3" ng-repeat="t in tasks">
-				      <div class="card-panel {{t.color}} darken-1">
-				        <span class="white-text">
+				  <div class="row">
+				    <div class="col s12 m3" ng-repeat="t in tasks track by $index">
+				      <div class="card {{t.color}} darken-1">
+				        <div class="card-image">
+				          <!-- <img src="images/sample-1.jpg"> -->
+				          <span class="card-title"><!-- Card Title --></span>
+				          <a class="btn-floating halfway-fab waves-effect waves-light red" onclick="deleteTask(no)">
+				          <img src="./src/bin.png" class="bin">
+				          </a>
+				        </div>
+				        <div class="card-content">
+				          <span class="white-text">
 				        	<div ng-if="t.type=='text'">
 				        		{{t.body}}				        		
 				        	</div>
 				        	<div ng-if="t.type=='list'">
 				        		<ul class="white-text">
-									<li class="listItem" ng-repeat="li in t.body" ng-click="markTask({{t.no}},{{$index}})">
-					        			<input type="checkbox" id="li{{$index}}"  />
-			  							<label for="li{{$index}}" class="white-text">{{li.text}}</label>
+									<li class="listItem" ng-repeat="li in t.body" >
+
+					        			<input type="checkbox" id="li{{t.no+'_'+$index}}"  />
+			  							<label for="li{{t.no+'_'+$index}}" class="white-text" ng-click="markTask(t.no,$index)">{{li.text}}</label>
 			  							<span>{{li.done}}</span>
 				        			</li>
 				        		</ul>
 				        	</div>				        	
 				        </span>
+				        </div>
 				      </div>
 				    </div>
+				  </div>
+					    <!-- <div class="col s12 m3" ng-repeat="t in tasks track by $index">
+					      <div class="card-panel {{t.color}} darken-1">
+					      <div class="card-image">
+					                <a class="btn-floating halfway-fab waves-effect waves-light white text-black">del</a>				      	
+					      </div>
+					        <span class="white-text">
+					        	<div ng-if="t.type=='text'">
+					        		{{t.body}}				        		
+					        	</div>
+					        	<div ng-if="t.type=='list'">
+					        		<ul class="white-text">
+										<li class="listItem" ng-repeat="li in t.body" >
+
+						        			<input type="checkbox" id="li{{t.no+'_'+$index}}"  />
+				  							<label for="li{{t.no+'_'+$index}}" class="white-text" ng-click="markTask(t.no,$index)">{{li.text}}</label>
+				  							<span>{{li.done}}</span>
+					        			</li>
+					        		</ul>
+					        	</div>				        	
+					        </span>
+					      </div>
+					    </div> -->
+				    
+
 				  </div>
 
 				</div>
