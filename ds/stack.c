@@ -22,4 +22,5 @@ void display(stack s){
 }
 void main(){
 	stack s;
+	
 }
