@@ -37,6 +37,15 @@ class Stack{
 			ele=this->stack[top--];
 			cout<<ele<<" was Popped out of Stack";
 		}
+		void operator--(Stack x){
+			int ele;
+			if(underFlow()){
+				cout<<"Stack Underflow: No Elements to Pop!";
+				return;
+			}
+			ele=x->stack[top--];
+			cout<<ele<<" was Popped out of Stack";
+		}
 		void display(){
 			cout<<"Stack elements ";
 			for(int i=0;i<=top;i++)

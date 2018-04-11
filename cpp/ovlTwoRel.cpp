@@ -4,7 +4,7 @@ class relOp{
 	private:
 		int a;
 	public: 
-		relOp(int x){
+x		relOp(int x){
 			a=x;
 		}
 		bool operator>(relOp rhs){
