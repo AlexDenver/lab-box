@@ -1,12 +1,39 @@
 var fs = require('fs');
 
-fs.open('mynewfile2.txt', 'w', function (err, file) {
+fs.open('mynewfile.txt', 'w', function (err, file) {
 	if (err) throw err; 
- // fs.write(file,"Hello World!",function(err,charCount) {
- // 	console.log(charCount);
- // });
+	console.log(file.toString());
+	 fs.write(file,"Hello World!",function(err,charCount) {
+	 	console.log(charCount);
+	 });
 	console.log('Saved!');
 }); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
