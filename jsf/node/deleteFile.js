@@ -7,8 +7,6 @@ fs.open('myTempFile.txt', 'w', function (err, file) {
 deleteFile = function() {
 	fs.unlink('./myTempFile.txt',function() {
 		console.log("myTempFile.txt Deleted");
-		
 	});	
 };
-
 setTimeout(deleteFile, 2500);

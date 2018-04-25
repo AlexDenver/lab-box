@@ -2,40 +2,52 @@
 <html>
 <head>
 	<title>Homepage</title>
-	<style type="text/css">
-	h1{
-		background: #3F51B5;
-	    color: #fff;
-	    padding: 25px 15px;
-	    margin: 0;
-	}
-	body{
-		margin:0;
-		padding: 0;
-		font-family: sans-serif;
-	}
-	ul {
-    	margin: 0;
-    	padding: 0;
-	}
-	li {
-	    display: block;
-	    margin: 10px 0;
-	    padding: 0;
-	    background: #607D8B;
-	    color: #fff;
-	    padding: 10px;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="../fw/materialize/css/materialize.min.css">
+	<script src="../fw/jquery.js"></script>
+	<script src="../fw/materialize/js/materialize.min.js"></script>
+	<script src="../fw/angular.min.js"></script>
+	
 </head>
-<body>
-	<h1>Home</h1>
-	<p>My Home</p>
-	<ul>
-		<li>List 1</li>
-		<li>List 2</li>
-		<li>List 3</li>
-		<li>List 4</li>
-	</ul>
-</body>
+<body >
+	<!-- <nav class="blue darken-3">
+		<ul>
+			<li><a href="index.html">Home</a></li>		
+		</ul>
+	</nav> -->
+	<div ng-app="eva">
+		<div class="wrapper" ng-controller="eventer">
+			<div class="row">			
+				<div class="col s4 offset-s4">
+					{{name}}
+					<button ng-click="mkReq()" class="btn" >Emit Event</button></br>					
+					<button ng-click="del()" class="btn" >Delete</button>					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script>		
+			angular.module('eva',[])
+			.controller('eventer', function($scope,$http) {
+				$scope.name = "John";
+				$scope.mkReq = function() {
+					console.log("Here");	
+					$http.get('http://127.0.0.1:8080',{init: "EmitButton"})
+					.then(function(res) {
+						console.log(res);
+						$scope.name = res.data.name;
+					});
+				};
+				$scope.mkReq = function() {
+					console.log("Here");	
+					$http.get('http://127.0.0.1:8080',{init: "Delete"})
+					.then(function(res) {
+						$scope.name = res.data.name;
+					});
+				};
+			})
+	</script>
+	<script>document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':${2:35729}/livereload.js?snipver=1"></' + 'script>')</script>
+</b	ody>
+
 </html>
