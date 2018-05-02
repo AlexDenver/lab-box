@@ -32,16 +32,17 @@
 				$scope.name = "John";
 				$scope.mkReq = function() {
 					console.log("Here");	
-					$http.get('http://127.0.0.1:8080',{init: "EmitButton"})
+					$http.post('http://127.0.0.1:8080',{init: "EmitButton"})
 					.then(function(res) {
 						console.log(res);
-						$scope.name = res.data.name;
+						$scope.name = res.data.name;						
 					});
 				};
-				$scope.mkReq = function() {
+				$scope.del = function() {
 					console.log("Here");	
-					$http.get('http://127.0.0.1:8080',{init: "Delete"})
+					$http.post('http://127.0.0.1:8080',{init: "Delete"})
 					.then(function(res) {
+						console.log(res);	
 						$scope.name = res.data.name;
 					});
 				};
