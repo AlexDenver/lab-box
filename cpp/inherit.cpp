@@ -16,6 +16,7 @@ class base{
 			cout<<"\nGet A Base";
 			return a;
 		}
+		//virtual 	
 };
 class derived:public base{
 	private:
@@ -40,7 +41,7 @@ class derived:public base{
 
 class derived_l2:derived{
 	public:
-		derived_l2(){
+		derived_l2(){			
 			cout<<"\nDerived L2; \nProtected A:";
 		}
 		derived_l2(int x):derived(x){
@@ -53,16 +54,13 @@ class derived_l2:derived{
 class derived_l2_1:derived_l2{
 
 	public:
-		void derive(){
+		void derive():derived_l2(110){
 			cout<<"\nDerived\n";
 		}
-
-
-
 };
 
 
-class derived_l3:public derived_l2{
+class derived_l3:public derived_l2, {
 	public:
 		derived_l3(int x):derived_l2(x){
 			cout<<"\nDerived L3; \nPrivate A:";//<<getA();
@@ -75,7 +73,7 @@ class derived_l3:public derived_l2{
 
 int main(){
 	derived d(10);
-	derived_l2_1 dx;
+	// derived_l2_1 dx;
 	cout<<endl<<d.getA()<<" Number";
 	d.display();
 	return 0;
