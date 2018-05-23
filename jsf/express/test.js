@@ -1,13 +1,13 @@
-express = require('express');
-app = express();
-var fs = require("fs")
-var jade = require('jade');
-var engines = require('consolidate');
-//console.log(app);
-path    = require("path");
-var bodyParser = require("body-parser");
-app.use(bodyParser());
+usejade=true;
+const express = require('express');
+const fs = require("fs")
+const jade = require('jade');
+const engines = require('consolidate');
+const path    = require("path");
+const bodyParser = require("body-parser");
 
+app = express();
+app.use(bodyParser());
 app.use(express.static(__dirname+"/static"));
 
 app.get('/', function (req, res) {
@@ -48,7 +48,7 @@ app.get('/home',function(req,res) {
 app.get('/login',function(req,res) {
 	res.render('form', {title: "My Page"});
 })
-app.get('/login/:mid([0-9a-z]{3,8})',function(req,res) {
+app.get('/login/:mid([0-9]{3,8})',function(req,res) {
 	res.render('form', {title: "My Page",myid:req.params.mid});
 })
 app.post('/result',function(req,res) {
@@ -57,19 +57,31 @@ app.post('/result',function(req,res) {
 
 })
 
-app.set('view engine', 'jade')
 
+
+app.get('/loginj',function(req,res) {
+	res.render('formj', {title: "My Page"});
+})
 app.get('/download/:img',function(req,res) {
 	res.download(__dirname+"/static/"+req.params.img);
 })
 
-app.engine('html', engines.swig);
-app.set('view engine', 'html');
+if(usejade){
+	app.engine('jade', engines.jade);
+	app.set('view engine', 'jade');	
+}else{
+	app.engine('html', engines.swig);
+	app.set('view engine', 'html');	
+}
+
 app.post('/html',function(req,res) {
-
 	res.render('htmlTemplate', {name: req.body.name, email: req.body.email});
-
 })
+
+app.post('/result',function(req,res) {
+	res.render('result', {name: req.body.name, email: req.body.email,expr: req});
+})
+
 .listen(1090,function(err){
 	if(err) throw err;
 	console.log("Listening on Port http://localhost:1090");

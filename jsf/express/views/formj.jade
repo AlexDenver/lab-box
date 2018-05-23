@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+	head
+		title= title
+		link(href="/style.css",rel="stylesheet")
+	body
+		div.box
+			form.login(method='POST' action='/result')
+				h1=myid
+				input(type='text', placeholder='first and last name' name='name')
+				input(type='email', placeholder='email' name='email')
+				button(type='submit') Sign up
