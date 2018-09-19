@@ -1,0 +1,18 @@
+{
+    "contents" : "getwd()\ndata()\nhelp(trees)\nstr(trees)\nclass(trees$Height)\nprint(trees$Height)\ntable(trees$Height)\nmin(trees$Girth)\nmin(trees$Height)\nmin(trees$Volume)\n#apply(table, row1/col2, func)\napply(trees, 1, max)\nnrow(trees)\nncol(trees)\nnames(trees)\ndim(trees)\ndata(iris)\n?summary(trees)\nrange\n\ndata(iris)\nhelp(iris)\nnames(iris)\nprint(iris)\nsummary(iris)\napply(iris, 2, max)\n\nidata = read.csv(\"./data.csv\")\napply(idata, 2, sum)\nnames(idata)\nsummary(idata)\nnrow(idata)\nncol(idata)\ndim(idata)\nrange(idata$price)\nis.na(idata)\nmean(idata$price, na.rm=\"F\")\n\nhelp(MASS)\nlibrary(MASS)\nhelp(survey)\nmean(survey$NW.Hnd, na.rm=\"T\")\nhist(survey$Wr.Hnd)\nboxplot(split(survey$Height, survey$Sex))\n\n",
+    "created" : 1537265745494.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1957246292",
+    "id" : "6700809B",
+    "lastKnownWriteTime" : 1537354267,
+    "path" : "~/AZ/Lab1/lab2.r",
+    "project_path" : "lab2.r",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
