@@ -55,6 +55,7 @@ tele_data$Current.Month.s.Usage = cmusage
 tele_data$Current.Month.s.Usage[is.na(tele_data$Current.Month.s.Usage)] = cmusage
 tele_data$Last.3.Month.s.Usage[is.na(tele_data$Last.3.Month.s.Usage)] = l3musage
 tele_data$Average.Recharge[is.na(tele_data$Average.Recharge)] = avgrchg
+#TABLE_NAME $ COL_NAME [COL_NAME  TEST CONDITION] = NEW VALUE
 
 
 
