@@ -15,12 +15,15 @@
 				$this->height = $h;
 				$this->width = $w;
 			}
+
 			function perimeter(){
 				return 2* ($this->height + $this->width);
 			}
+
 			function area(){
 				return $this->width*$this->height;
 			}
+			
 		};
 		if($_POST){
 			$myRect = new myrectangle($_POST['height'],$_POST['width']);

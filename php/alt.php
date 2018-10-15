@@ -8,7 +8,7 @@
 			if(array_key_exists($i, $a1))
 				array_push($a3, $a1[$i]);				
 			if(array_key_exists($i, $a2))
-				array_push($a3, $a2[$i]);				
+				array_push($a3, $a2[$i]);		
 		}
 
 
