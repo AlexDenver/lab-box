@@ -16,3 +16,5 @@ write.csv(file = "./Missing_Value_Clean.csv" ,cleanData)
 
 
 
+mydata = merge(myprofile, myusage, by = “ID”)
+mydata = rbind(class1, class2)
