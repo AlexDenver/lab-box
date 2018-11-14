@@ -4,7 +4,7 @@ print (c(1:20,20:1))
 
 d = c(4,6,3)
 
-data = read.csv('./newData.csv')
+data = read.csv('./newData.csv',)
 plot(data$Distance, data$Stretch ) #, xlab = "Distance", ylab = "Stretch")
 
 rep(c(4,6,3),10)
