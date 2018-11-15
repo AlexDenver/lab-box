@@ -1,0 +1,8 @@
+{
+	id: varchar,
+	username: varchar,
+	first_name: varchar,
+	last_name: varchar,
+	dob: Date,
+	
+}
