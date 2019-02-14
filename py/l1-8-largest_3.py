@@ -1,8 +1,3 @@
-name = input("Enter your name:")
-sem = input("Enter your semester:")
-
-
-
 str = input("Enter three numbers: ")
 str = str.split(' ')
 if(len(str) != 3):
@@ -18,4 +13,6 @@ else:
         print("%d is the Largest" % n2)
     else:
         print("%d is the Largest" % n3)
+        
+
         
