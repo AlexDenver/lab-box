@@ -1,7 +1,7 @@
 ## Lab One
 
 #### Query Structure
-db.COLLECTION_NAME.find({\<QUERY>}, {\<COLUMNS>}, {\<OPTIONS>})
+> db.COLLECTION_NAME.find({\<QUERY>}, {\<COLUMNS>}, {\<OPTIONS>})
 
 
 #### Basic Queries
@@ -50,3 +50,32 @@ db.inventory.find( {
 
 ```
 
+
+
+## Lab Two
+
+#### IN, NIN Operation
+```javascript
+db.items.find({ 
+    qty: {
+        $in: [15, 20, 25]
+    }
+})
+db.items.find({ 
+    qty: {
+        $nin: [15, 20, 25],
+        $exists: true
+    }
+})
+
+```
+
+#### EXISTS Operation
+```javascript
+db.items.find({ 
+    qty: {
+        $in: [15, 20, 25],
+        $exists: true
+    }
+})
+```
