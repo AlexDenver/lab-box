@@ -5,7 +5,7 @@ db.COLLECTION_NAME.find({\<QUERY>}, {\<COLUMNS>}, {\<OPTIONS>})
 
 
 #### Basic Queries
-``` 
+```javascript
 db.inventory.find()
 db.inventory.find( {} , {_id: false} )
 db.inventory.find( {} , {item: true, qty: true, status: true} )
@@ -18,7 +18,7 @@ db.inventory.find({qty: {$lte: 75}})
 
 #### And Operations.
 
-```
+```javascript
 db.inventory.find( {
     $and: [ 
             { qty: { $gte: 75 } },  
@@ -35,7 +35,7 @@ db.inventory.find( {
 ```
 
 #### Not Operations.
-```
+```javascript
 db.inventory.find( {
     status: { 
         $not: {$eq: 'P'} 
