@@ -1,5 +1,9 @@
 ## Lab One
 
+#### Query Structure
+db.COLLECTION_NAME.find({\<QUERY>}, {\<COLUMNS>}, {\<OPTIONS>})
+
+
 #### Basic Queries
 ``` 
 db.inventory.find()
@@ -12,7 +16,7 @@ db.inventory.find({status: 'A'})
 db.inventory.find({qty: {$lte: 75}})
 ```
 
-#### Write a MongoDB query to display all the inventory with quantity greater than or equal to 75 and less than 100.
+#### And Operations.
 
 ```
 db.inventory.find( {
@@ -21,14 +25,28 @@ db.inventory.find( {
             { qty: { $lt: 100 } }
         ]         
 })
+
+db.inventory.find( {
+    $and: [ 
+            { price: { $gte: 100 } },  
+            { price: { $lt: 450 } }
+        ]  
+})
 ```
 
-#### Write a MongoDB query to display all the inventory which does not have status "P".
+#### Not Operations.
 ```
 db.inventory.find( {
     status: { 
         $not: {$eq: 'P'} 
     }
 })
+
+db.inventory.find( {
+    qty: { 
+        $not: {$eq: 100} 
+    }
+})
+
 ```
 
