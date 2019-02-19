@@ -79,3 +79,31 @@ db.items.find({
     }
 })
 ```
+
+#### Remove Operation
+
+```javascript
+db.items.remove(
+    {
+        "item.name": 'cd'
+    }, {
+        justOne: true
+    }
+)
+```
+
+
+#### Update Operation
+
+```javascript
+db.items.update(
+    {},{ 
+        $set: { 
+            price: 100, 
+            sales: true 
+        }
+    }, {
+        multi: true
+    }
+)
+```
