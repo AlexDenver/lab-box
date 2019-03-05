@@ -107,3 +107,11 @@ db.items.update(
     }
 )
 ```
+
+#### $elemMatch for Querying Arrays (Sub Documents)
+
+```javascript
+db.invoice.find({<array>: {$elemMatch:{ /* array_item: 'value' */  }})
+```
+
+
